@@ -1,4 +1,4 @@
-package stb.com.vn.grpc.server.controllers;
+package stb.com.vn.grpc.server;
 
 import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
@@ -15,7 +15,7 @@ import static io.grpc.Status.INVALID_ARGUMENT;
 public class WalletController extends WalletGrpc.WalletImplBase {
     private static final Logger logger = LoggerFactory.getLogger(WalletController.class);
 
-    private  WalletService walletService;
+    private WalletService walletService;
 
     @Override
     public void balance(BalanceRequest request, StreamObserver<BalanceReply> responseObserver) {

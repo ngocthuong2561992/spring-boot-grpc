@@ -1,6 +1,6 @@
 grpc:
   server:
-    port: 9000
+      port: 9000
 spring:
   application.name: jpa
   main.allow-bean-definition-overriding: true
