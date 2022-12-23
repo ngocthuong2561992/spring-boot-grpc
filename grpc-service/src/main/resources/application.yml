@@ -1,0 +1,35 @@
+grpc:
+  server:
+    port: 9000
+spring:
+  application.name: jpa
+  main.allow-bean-definition-overriding: true
+  profiles:
+    active: dev
+  jackson.default-property-inclusion: non_absent
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+    database: default
+    database-platform: org.hibernate.dialect.H2Dialect
+    datasource:
+      url: jdbc:h2:mem:testdb
+      driver-class-name: org.h2.Driver
+      username: sa
+      password:
+    h2:
+      console:
+        enabled: true
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    org.springframework.web.FilterChainProxy: DEBUG
+    org.springframework.web.client.RestTemplate: DEBUG
+    org.springframework.security: DEBUG
+    org.springframework.boot.autoconfigure: INFO
+    org.hibernate.SQL: DEBUG
+    #    org.hibernate.type.descriptor.sql: trace
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+
