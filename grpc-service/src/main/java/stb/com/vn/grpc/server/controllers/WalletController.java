@@ -8,7 +8,6 @@ import org.slf4j.LoggerFactory;
 import stb.com.vn.*;
 import stb.com.vn.services.WalletException;
 import stb.com.vn.services.WalletService;
-import stb.com.vn.WalletGrpc;
 
 import static io.grpc.Status.INVALID_ARGUMENT;
 
@@ -16,11 +15,7 @@ import static io.grpc.Status.INVALID_ARGUMENT;
 public class WalletController extends WalletGrpc.WalletImplBase {
     private static final Logger logger = LoggerFactory.getLogger(WalletController.class);
 
-    private final WalletService walletService;
-
-    public WalletController(WalletService walletService) {
-        this.walletService = walletService;
-    }
+    private  WalletService walletService;
 
     @Override
     public void balance(BalanceRequest request, StreamObserver<BalanceReply> responseObserver) {

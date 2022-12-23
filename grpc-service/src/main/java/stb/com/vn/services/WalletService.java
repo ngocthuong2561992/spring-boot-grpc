@@ -19,7 +19,6 @@ public class WalletService {
     VND, USD
     }
 
-
     @Autowired
     private BalanceRepository repository;
 
