@@ -10,7 +10,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>client-service</artifactId>
+    <artifactId>sender-service</artifactId>
 
     <developers>
         <developer>
