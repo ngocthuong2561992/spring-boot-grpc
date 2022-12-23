@@ -8,22 +8,24 @@ import stb.com.vn.repositories.BalanceRepository;
 
 import javax.transaction.Transactional;
 import java.util.Map;
-import java.util.Set;
 
 import static java.util.stream.Collectors.toMap;
 
 @Service
 public class WalletService {
 
-    private static final Set<String> SUPPORTED_CURRENCIES = Set.of("EUR", "USD", "GBP");
+    //    private static final Set<String> SUPPORTED_CURRENCIES = Set.of(e1:"VND", "USD");
+    enum SUPPORTED_CURRENCIES {
+    VND, USD
+    }
 
 
     @Autowired
-    private final BalanceRepository repository;
+    private BalanceRepository repository;
 
-    public WalletService(BalanceRepository repository) {
-        this.repository = repository;
-    }
+//    public WalletService(BalanceRepository repository) {
+//        this.repository = repository;
+//    }
 
 
     public Map<String, Integer> getBalances(String userId) {
@@ -58,7 +60,7 @@ public class WalletService {
     }
 
     private void validateCurrency(String currency) throws WalletException {
-        if (!SUPPORTED_CURRENCIES.contains(currency)) {
+        if (!SUPPORTED_CURRENCIES.VND.equals("VND") && SUPPORTED_CURRENCIES.USD.equals("USD")) {
             throw new WalletException("unknown currency");
         }
     }
