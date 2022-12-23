@@ -2,9 +2,7 @@ package stb.com.vn.grpc.client.service;
 
 import net.devh.boot.grpc.client.inject.GrpcClient;
 import org.springframework.stereotype.Service;
-import stb.com.vn.ChangeBalanceRequest;
-import stb.com.vn.Empty;
-import stb.com.vn.WalletGrpc;
+import stb.com.vn.*;
 
 @Service
 public class AccountService {

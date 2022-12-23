@@ -5,6 +5,7 @@ import io.grpc.stub.StreamObserver;
 import net.devh.boot.grpc.server.service.GrpcService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import stb.com.vn.*;
 import stb.com.vn.services.WalletException;
 import stb.com.vn.services.WalletService;
@@ -15,7 +16,24 @@ import static io.grpc.Status.INVALID_ARGUMENT;
 public class WalletController extends WalletGrpc.WalletImplBase {
     private static final Logger logger = LoggerFactory.getLogger(WalletController.class);
 
-    private WalletService walletService;
+
+    @Autowired
+    private  WalletService walletService ;
+
+//    private final WalletService walletService;
+
+//    WalletController(WalletService walletService) {
+//        this.walletService = walletService;
+//    }
+
+//    public WalletController(WalletService walletService) {
+//        this.walletService = walletService;
+//    }
+
+//    WalletController(WalletService walletService) {
+//        this.walletService = walletService;
+//    }
+//    private WalletServiceImpl walletService;
 
     @Override
     public void balance(BalanceRequest request, StreamObserver<BalanceReply> responseObserver) {
